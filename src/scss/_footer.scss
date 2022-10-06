@@ -1,0 +1,46 @@
+.footer {
+  &__column {
+    padding: 40px;
+    @include sm {
+      padding: 20px 0px 20px 0px;
+    }
+  }
+
+  &__label {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+.menu-footer {
+  &__list {
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    @include xs {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.contacts-footer {
+  &__item {
+    font-weight: 400;
+    color: black;
+    &:hover {
+      text-decoration: underline;
+      color: rgb(8, 34, 58);
+    }
+  }
+}

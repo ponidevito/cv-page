@@ -1,0 +1,116 @@
+/*==============  HEADER  ===========  */
+.header {
+  &__body {
+    padding: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    @include md {
+      flex-wrap: wrap-reverse;
+      padding: 00px;
+    }
+  }
+
+  &__image {
+    padding: 0px 15px 0px 15px;
+    img {
+      width: 200px;
+      height: 275px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 15px 0px 15px;
+    @include md {
+      margin-bottom: 30px;
+      padding: 0px;
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__about {
+    @include md {
+      width: 100%;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+  }
+  &__lenguage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    width: 400px;
+    padding-top: 40px;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    @include md {
+      padding-top: 20px;
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 700;
+  &:not(:last-child) {
+    margin-bottom: 21px;
+  }
+  span {
+    font-weight: 700;
+  }
+  @include md {
+    padding: 0px;
+  }
+  @media (max-width: 390px) {
+    font-size: 15px;
+  }
+}
+
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  @include md {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+.textInfo {
+  font-weight: 400;
+  @media (max-width: 391px) {
+    font-size: 16px;
+    padding: 0px 0px 0px 5px;
+  }
+}
+
+.textInfo-link {
+  font-weight: 400;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+}

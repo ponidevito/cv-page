@@ -1,0 +1,146 @@
+// Global SCSS-files imports
+@import "./mixins";
+@import "./vars";
+@import "./reset";
+@import "./global";
+@import "./fonts";
+
+// Sections or Pages SCSS-files imports
+@import "./header";
+@import "./select";
+@import "./footer";
+
+// Libs
+// @import './libs/swiper';
+
+html,
+body {
+  font-family: EBGaramond;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #dde4ce;
+  height: 100%;
+  letter-spacing: 1px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-skills {
+  padding-top: 100px;
+  @include md {
+    padding-top: 60px;
+  }
+  @include sm {
+    padding-top: 20px;
+  }
+}
+
+/*==============  accordion  ===========  */
+
+.skills {
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .accordion {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(10, 21, 39, 0.1);
+      color: #444;
+      cursor: pointer;
+      padding: 15px;
+      width: 62%;
+      display: flex;
+      align-items: center;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+      @include md {
+        width: 100%;
+      }
+      @include sm {
+        padding: 15px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      &__item {
+        width: 100%;
+      }
+      &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &__text {
+        font-family: "Gilroy";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        color: $secondary;
+        @include sm {
+          font-size: 17px;
+        }
+      }
+    }
+    .panel {
+      padding: 0px 28px 0px 0px;
+
+      max-height: 0;
+      overflow: hidden;
+      color: black;
+      transition: max-height 0.2s ease-out;
+      ul {
+        margin-top: 14px;
+        font-family: "Gilroy";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 190%;
+        letter-spacing: 0.02em;
+        color: rgba(0, 23, 49, 0.55);
+      }
+      a {
+        color: rgba(0, 23, 49, 0.55);
+        &:hover {
+          text-decoration: underline;
+          color: rgb(8, 34, 58);
+        }
+      }
+
+      p {
+        margin-top: 14px;
+        font-weight: 500;
+        line-height: 1.5;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+.accordion__content {
+  &::after {
+    content: url("../img/plus.svg");
+    padding: 10px;
+  }
+  &.active::after {
+    content: url("../img/minus.png");
+    padding: 7px;
+  }
+}
+
+/*==============  accordion  ===========  */
+
+.main {
+  flex: 1 1 auto;
+}
