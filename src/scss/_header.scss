@@ -1,17 +1,18 @@
 /*==============  HEADER  ===========  */
 .header {
   &__body {
-    padding: 40px;
+    padding: 40px 0px 40px 0px;
     display: flex;
-    justify-content: space-evenly;
-    @include md {
+    justify-content: space-between;
+    @include sm {
       flex-wrap: wrap-reverse;
-      padding: 00px;
+      justify-content: center;
+      padding: 0px;
     }
   }
 
   &__image {
-    padding: 0px 15px 0px 15px;
+    padding: 0px 15px 0px 0px;
     img {
       width: 200px;
       height: 275px;
@@ -24,12 +25,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0px 15px 0px 15px;
+    padding: 0px 0px 0px 15px;
     @include md {
       margin-bottom: 30px;
-      padding: 0px;
+      padding: 0px 0px 0px 20px;
       width: 100%;
       align-items: center;
+    }
+    @include sm {
+      padding: 0px;
     }
   }
 
@@ -109,8 +113,28 @@
 
 .textInfo-link {
   font-weight: 400;
-  color: inherit;
-  &:hover {
-    text-decoration: underline;
+color: inherit;
+span{
+  font-weight: 400;
+}
+}
+.textInfo-link-text{
+  position: relative;
+ 
+
+  &::after {
+    content: "";
+    transition: 0.3s ease;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    left: 0;
+    bottom: -5px;
   }
+  &:hover::after {
+       width: 100%;
+  }
+
+
 }

@@ -11,7 +11,7 @@
 @import "./footer";
 
 // Libs
-// @import './libs/swiper';
+@import './libs/accordion';
 
 html,
 body {
@@ -128,19 +128,23 @@ body {
   }
 }
 
-.accordion__content {
-  &::after {
-    content: url("../img/plus.svg");
-    padding: 10px;
-  }
-  &.active::after {
-    content: url("../img/minus.png");
-    padding: 7px;
-  }
-}
+// .accordion__content {
+//   &::after {
+//     content: url("../img/plus.svg");
+//     padding: 10px;
+//   }
+//   &.active::after {
+//     content: url("../img/minus.png");
+//     padding: 7px;
+//   }
+// }
 
 /*==============  accordion  ===========  */
 
 .main {
+  margin-top: 50px;
   flex: 1 1 auto;
+  @include sm{
+    margin-top: 30px;
+  }
 }

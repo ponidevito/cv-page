@@ -1,49 +1,16 @@
 // Custom scripts
 let acc = document.getElementsByClassName("accordion");
-let content = document.getElementsByClassName('accordion__content');
+let content = document.getElementsByClassName("accordion__content");
 let i;
 let panel;
-
-// accordion
-function accordion() {
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      panel = this.firstElementChild.lastElementChild;
-
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-}
-
-accordion();
-
-function toggle() {
-  let _loop = function _loop(a) {
-    acc[a].addEventListener('click', function () {
-      content[a].classList.toggle("active");
-    });
-  };
-
-  for (let a = 0; a < acc.length; a++) {
-    _loop(a);
-  }
-}
-
-toggle();
 
 
 // select lenguage
 
-
 let selectHeader = document.querySelector(".select__header");
 let selectItem = document.querySelectorAll(".select__item");
 let selectBody = document.querySelector(".select__body");
-let html=document.querySelector("html")
+let html = document.querySelector("html");
 
 const allLang = ["en", "es", "ua"];
 
@@ -59,29 +26,30 @@ let select = function () {
     event.stopPropagation();
   }
 
-
-
   function selectChoose() {
-    
     let text = this.innerText,
       select = this.closest(".select"),
       currentText = select.querySelector(".select__current");
     currentText.innerText = text;
     let lang = this.innerText;
     location.href = window.location.pathname + "#" + lang.toLowerCase();
-    localStorage.setItem('place1', lang);
+    localStorage.setItem("place1", lang);
     selectBody.classList.remove("opacity");
     location.reload();
-    
-    if(localStorage.getItem('place1')){ 
-      lang = localStorage.getItem('place1');
+
+    if (localStorage.getItem("place1")) {
+      lang = localStorage.getItem("place1");
     }
   }
 };
 
 select();
 
-window.addEventListener("load",function(){ if(localStorage.getItem('place1'))  document.querySelector('.select__current').innerHTML=localStorage.getItem('place1')})
+window.addEventListener("load", function () {
+  if (localStorage.getItem("place1"))
+    document.querySelector(".select__current").innerHTML =
+      localStorage.getItem("place1");
+});
 
 function changeLanguage() {
   let hash = window.location.hash;
@@ -101,10 +69,11 @@ function changeLanguage() {
 }
 changeLanguage();
 
-html.addEventListener('click', function(e) {
-  if(e.target.tagName !== 'HTML' || e.target.tagName !== 'BODY'){
-      selectBody.classList.remove('opacity');
+
+
+html.addEventListener("click", function (e) {
+  if (e.target.tagName !== "HTML" || e.target.tagName !== "BODY") {
+    selectBody.classList.remove("opacity");
+    
   }
 });
-
-
