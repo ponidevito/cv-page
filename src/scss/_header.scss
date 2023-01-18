@@ -38,6 +38,7 @@
   }
 
   &__about {
+    z-index: 1;
     @include md {
       width: 100%;
       padding-bottom: 20px;
@@ -105,6 +106,7 @@
 }
 .textInfo {
   font-weight: 400;
+  
   @media (max-width: 391px) {
     font-size: 16px;
     padding: 0px 0px 0px 5px;

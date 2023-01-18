@@ -4,9 +4,9 @@
       border-bottom: 1px solid#C4C4C4;
 
       &.accordion__item-active {
-     
         .accordion__item-content {
           display: block;
+          background-color: rgb(233 243 211 / 38%);
         }
 
         .line2 {
@@ -18,14 +18,19 @@
           opacity: 0;
           transition: 0.2s all ease;
         }
+        .accordion__item-trigger{
+          background-color: rgb(233 243 211 / 38%);
+        }
       }
 
       .accordion__item-trigger {
         display: flex;
-        padding: 20px 0;
+        padding: 20px 20px;
         align-items: center;
         cursor: pointer;
         gap: 20px;
+        border-radius: 5px;
+        
 
         .trigger__num {
           font-style: normal;
@@ -83,11 +88,17 @@
 
           &:first-child {
             margin-top: 0;
+        
+          }
+          &.lng-about-text{
+            padding: 0px 20px;
+           line-height: 1.2;
           }
         }
         .content__text-list {
           display: flex;
           flex-direction: column;
+          padding: 10px 20px;
           li {
             font-size: 20px;
             font-weight: 500;
