@@ -62,9 +62,9 @@ const langArr = {
   },
 
   'about-text': {
-    en: "Hello! My name is Oleg. I am 32 years old. I am punctual and responsible for my work, I am ready to learn something new and develop in this area in your team!",
-    es: "Hola! Mi nombre es Oleh ! Tengo 32 años. Soy puntual y responsable de mi trabajo.¡Estoy listo para aprender algo nuevo y desarrollarme en este campo en su equipo!",
-    ua: "Привіт! Мене звати Олег! Мені 32 роки. Я пунктуальний та відповідально ставлюся до своєї роботи. Я готовий навчатися чомусь новому та розвиватись у цій сфері у вашій команді!",
+    en: "Hello! My name is Oleg. I am 33 years old. I am punctual and responsible for my work, I am ready to learn something new and develop in this area in your team!",
+    es: "Hola! Mi nombre es Oleh ! Tengo 33 años. Soy puntual y responsable de mi trabajo.¡Estoy listo para aprender algo nuevo y desarrollarme en este campo en su equipo!",
+    ua: "Привіт! Мене звати Олег! Мені 33 роки. Я пунктуальний та відповідально ставлюся до своєї роботи. Я готовий навчатися чомусь новому та розвиватись у цій сфері у вашій команді!",
   },
    /*   about       */
 
