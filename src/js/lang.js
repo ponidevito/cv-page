@@ -53,6 +53,11 @@ const langArr = {
     es: "Habilidades",
     ua: "Навички",
   },
+  'website': {
+    en: "My website",
+    es: "Mi sitio web",
+    ua: "Мій вебсайт",
+  },
 
    /*   about       */
   'about': {

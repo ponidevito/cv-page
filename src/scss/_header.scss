@@ -14,10 +14,14 @@
   &__image {
     padding: 0px 15px 0px 0px;
     img {
-      width: 200px;
-      height: 275px;
+      width: 229.5px;
+      height: 274.5px;
       border-radius: 10px;
       box-shadow: 5px 5px 20px;
+      @include sm {
+        max-width: 100%;
+        object-fit: cover;
+      }
     }
   }
 
@@ -106,7 +110,7 @@
 }
 .textInfo {
   font-weight: 400;
-  
+
   @media (max-width: 391px) {
     font-size: 16px;
     padding: 0px 0px 0px 5px;
@@ -115,14 +119,13 @@
 
 .textInfo-link {
   font-weight: 400;
-color: inherit;
-span{
-  font-weight: 400;
+  color: inherit;
+  span {
+    font-weight: 400;
+  }
 }
-}
-.textInfo-link-text{
+.textInfo-link-text {
   position: relative;
- 
 
   &::after {
     content: "";
@@ -135,8 +138,6 @@ span{
     bottom: -5px;
   }
   &:hover::after {
-       width: 100%;
+    width: 100%;
   }
-
-
 }

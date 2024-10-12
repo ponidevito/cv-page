@@ -54,6 +54,11 @@ const langArr = {
     es: "Habilidades",
     ua: "Навички",
   },
+  'website': {
+    en: "My website",
+    es: "Mi sitio web",
+    ua: "Мій вебсайт",
+  },
 
    /*   about       */
   'about': {
@@ -181,29 +186,33 @@ let select = function () {
     event.stopPropagation();
   }
 
-  function selectChoose() {
-    let text = this.innerText,
-      select = this.closest(".select"),
-      currentText = select.querySelector(".select__current");
-    currentText.innerText = text;
-    let lang = this.innerText;
-    location.href = window.location.pathname + "#" + lang.toLowerCase();
-    localStorage.setItem("place1", lang);
-    selectBody.classList.remove("opacity");
-    location.reload();
 
-    if (localStorage.getItem("place1")) {
-      lang = localStorage.getItem("place1");
-    }
+  function selectChoose() {
+    let text = this.innerText, // Видаляємо toLowerCase
+        select = this.closest(".select"),
+        currentText = select.querySelector(".select__current");
+  
+    currentText.innerText = text.toUpperCase(); // Встановлюємо відображення тексту з великої літери
+  
+    let lang = text.toLowerCase(); // Для URL та localStorage використовуємо нижній регістр
+    location.href = window.location.pathname + "#" + lang;
+    localStorage.setItem("lang", lang);
+  
+    selectBody.classList.remove("opacity");
+    changeLanguage();
   }
+
+
 };
 
 select();
 
+
 window.addEventListener("load", function () { 
-  if (localStorage.getItem("place1"))
-    document.querySelector(".select__current").innerHTML =
-      localStorage.getItem("place1");
+  let savedLang = localStorage.getItem("lang") || "en"; // За замовчуванням англійська
+  document.querySelector(".select__current").innerText = savedLang.toUpperCase(); // Відображаємо з великої літери
+  location.href = window.location.pathname + "#" + savedLang;
+  changeLanguage(); // Зміна мови при завантаженні
 });
 
 // function change lenguage
@@ -213,7 +222,8 @@ function changeLanguage() {
 
   if (!allLang.includes(hash)) {
     location.href = window.location.pathname + "#en";
-    location.reload();
+    // location.reload();
+    return;
   }
   
   document.querySelector("title").innerHTML = langArr["unit"][hash];
@@ -226,11 +236,28 @@ function changeLanguage() {
 }
 changeLanguage();
 
+function setFlag(language) {
+  const selectCurrent = document.querySelector('.select__current');
+  selectCurrent.textContent = language.toUpperCase(); // Встановлюємо великі літери для відображення
+
+  // Оновлюємо URL з новою мовою
+  window.location.hash = language.toLowerCase(); // URL все ще з маленької літери
+}
+
 
 // html or body close click 
 html.addEventListener("click", function (e) {
   if (e.target.tagName !== "HTML" || e.target.tagName !== "BODY") {
     selectBody.classList.remove("opacity");
+  }
+});
+
+window.addEventListener('load', function() {
+  const language = window.location.hash.substring(1).toUpperCase(); // Отримуємо мову з хешу, наприклад, "en"
+  
+  // Якщо мова присутня в хеші, оновлюємо відображену мову
+  if (language) {
+    setFlag(language);
   }
 });
 

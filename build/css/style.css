@@ -150,8 +150,8 @@ h6 {
 }
 
 .header__image img {
-  width: 200px;
-  height: 275px;
+  width: 229.5px;
+  height: 274.5px;
   border-radius: 10px;
   -webkit-box-shadow: 5px 5px 20px;
           box-shadow: 5px 5px 20px;
@@ -820,6 +820,12 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0px;
+  }
+
+  .header__image img {
+    max-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   .header__info {
