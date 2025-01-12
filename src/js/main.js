@@ -130,6 +130,24 @@ gsap.fromTo(".accordion__item-trigger", {opacity:0}, {opacity: 1, duration: 2});
 gsap.from(".footer", {opacity:0,delay:1.8});
 
 
+// view preview 
+
+document.querySelectorAll('.content__text-item a').forEach(item => {
+  item.addEventListener('mouseover', function() {
+    const previewContainer = this.closest('.accordion__item').querySelector('.preview-image');
+    const previewSrc = this.dataset.preview;
+    
+    // console.log('Джерело прев’ю:', previewSrc);
+
+    if (previewSrc && previewContainer) {
+      previewContainer.src = previewSrc;
+    } else {
+      console.warn('Джерело прев’ю не визначено або previewContainer не знайдено для:', this);
+    }
+  });
+});
+
+
 
 
 
