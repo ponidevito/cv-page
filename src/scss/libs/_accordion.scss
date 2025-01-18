@@ -198,6 +198,9 @@
   height: 100%;
   border-radius: 10px;
   box-shadow: 5px 5px 20px;
+  @include lg {
+    display: none;
+  }
 }
 
 .content__text-item:hover .preview-container {

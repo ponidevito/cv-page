@@ -806,6 +806,10 @@ body {
   .preview-container {
     display: none;
   }
+
+  .preview-image {
+    display: none;
+  }
 }
 
 @media (max-width: 767.98px) {
